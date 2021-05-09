@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <!-- Main Nav -->
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@+id/view_main_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:padding="5dp"
+        app:alignItems="center"
+        app:justifyContent="center">
+
+        <!-- App Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/dancing_script_bold"
+            android:text="@string/app_name"
+            android:textColor="@color/black"
+            android:textSize="42sp" />
+    </com.google.android.flexbox.FlexboxLayout>
+
+    <!-- Product List -->
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@+id/view_main_product_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/view_main_nav"
+        android:layout_margin="10dp"
+        app:flexWrap="wrap"
+        app:justifyContent="space_between">
+
+        <!-- Product Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/succulent_card"
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_gravity="fill"
+            android:layout_margin="5dp"
+            android:background="@color/white"
+            android:onClick="onSucculentCardClicked"
+            app:cardElevation="0dp">
+
+            <!-- Card Content -->
+            <com.google.android.flexbox.FlexboxLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:flexDirection="column">
+
+                <!-- Card Image -->
+                <ImageView
+                    android:id="@+id/succulent_card_thumbnail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/thumbnail_succulent" />
+
+                <!-- Card Body -->
+                <com.google.android.flexbox.FlexboxLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="125dp"
+                    android:background="@color/white"
+                    app:alignItems="center"
+                    app:flexDirection="column"
+                    app:justifyContent="center">
+
+                    <!-- Product Name -->
+                    <TextView
+                        android:id="@+id/succulent_card_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="@string/product_name_fallback"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <!-- Product Price -->
+                    <TextView
+                        android:id="@+id/succulent_card_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/product_succulent_price_fallback"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+                </com.google.android.flexbox.FlexboxLayout>
+            </com.google.android.flexbox.FlexboxLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Product Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/green_leaves_card"
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_gravity="fill"
+            android:layout_margin="5dp"
+            android:background="@color/white"
+            android:onClick="onGreenLeavesCardClicked"
+            app:cardElevation="0dp">
+
+            <!-- Card Content -->
+            <com.google.android.flexbox.FlexboxLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:flexDirection="column">
+
+                <!-- Card Image -->
+                <ImageView
+                    android:id="@+id/green_leaves_card_thumbnail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/thumbnail_green_leaves" />
+
+                <!-- Card Body -->
+                <com.google.android.flexbox.FlexboxLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="125dp"
+                    android:background="@color/white"
+                    app:alignItems="center"
+                    app:flexDirection="column"
+                    app:justifyContent="center">
+
+                    <!-- Product Name -->
+                    <TextView
+                        android:id="@+id/green_leaves_card_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="@string/product_name_fallback"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <!-- Product Price -->
+                    <TextView
+                        android:id="@+id/green_leaves_card_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/product_green_leaves_price_fallback"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+                </com.google.android.flexbox.FlexboxLayout>
+            </com.google.android.flexbox.FlexboxLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Product Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/bulbous_card"
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_gravity="fill"
+            android:layout_margin="5dp"
+            android:background="@color/white"
+            android:onClick="onBulbousCardClicked"
+            app:cardElevation="0dp">
+
+            <!-- Card Content -->
+            <com.google.android.flexbox.FlexboxLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:flexDirection="column">
+
+                <!-- Card Image -->
+                <ImageView
+                    android:id="@+id/bulbous_card_thumbnail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/thumbnail_bulbous" />
+
+                <!-- Card Body -->
+                <com.google.android.flexbox.FlexboxLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="125dp"
+                    android:background="@color/white"
+                    app:alignItems="center"
+                    app:flexDirection="column"
+                    app:justifyContent="center">
+
+                    <!-- Product Name -->
+                    <TextView
+                        android:id="@+id/bulbous_card_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="@string/product_name_fallback"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <!-- Product Price -->
+                    <TextView
+                        android:id="@+id/bulbous_card_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/product_bulbous_price_fallback"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+                </com.google.android.flexbox.FlexboxLayout>
+            </com.google.android.flexbox.FlexboxLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Product Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/roses_bunch_card"
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_gravity="fill"
+            android:layout_margin="5dp"
+            android:background="@color/white"
+            android:onClick="onRosesBunchCardClicked"
+            app:cardElevation="0dp">
+
+            <!-- Card Content -->
+            <com.google.android.flexbox.FlexboxLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:flexDirection="column">
+
+                <!-- Card Image -->
+                <ImageView
+                    android:id="@+id/roses_bunch_card_thumbnail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/thumbnail_roses_bunch" />
+
+                <!-- Card Body -->
+                <com.google.android.flexbox.FlexboxLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="125dp"
+                    android:background="@color/white"
+                    app:alignItems="center"
+                    app:flexDirection="column"
+                    app:justifyContent="center">
+
+                    <!-- Product Name -->
+                    <TextView
+                        android:id="@+id/roses_bunch_card_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="@string/product_name_fallback"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <!-- Product Price -->
+                    <TextView
+                        android:id="@+id/roses_bunch_card_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/product_roses_bunch_price_fallback"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+                </com.google.android.flexbox.FlexboxLayout>
+            </com.google.android.flexbox.FlexboxLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Product Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/tulip_card"
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_gravity="fill"
+            android:layout_margin="5dp"
+            android:background="@color/white"
+            android:onClick="onTulipCardClicked"
+            app:cardElevation="0dp">
+
+            <!-- Card Content -->
+            <com.google.android.flexbox.FlexboxLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:flexDirection="column">
+
+                <!-- Card Image -->
+                <ImageView
+                    android:id="@+id/tulip_card_thumbnail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/thumbnail_tulip" />
+
+                <!-- Card Body -->
+                <com.google.android.flexbox.FlexboxLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="125dp"
+                    android:background="@color/white"
+                    app:alignItems="center"
+                    app:flexDirection="column"
+                    app:justifyContent="center">
+
+                    <!-- Product Name -->
+                    <TextView
+                        android:id="@+id/tulip_card_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="@string/product_name_fallback"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <!-- Product Price -->
+                    <TextView
+                        android:id="@+id/tulip_card_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/product_tulip_price_fallback"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+                </com.google.android.flexbox.FlexboxLayout>
+            </com.google.android.flexbox.FlexboxLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Product Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/yellow_flower_card"
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_gravity="fill"
+            android:layout_margin="5dp"
+            android:background="@color/white"
+            android:onClick="onYellowFlowerCardClicked"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="0dp">
+
+            <!-- Card Content -->
+            <com.google.android.flexbox.FlexboxLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:flexDirection="column">
+
+                <!-- Card Image -->
+                <ImageView
+                    android:id="@+id/yellow_flower_card_thumbnail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/thumbnail_yellow_flower" />
+
+                <!-- Card Body -->
+                <com.google.android.flexbox.FlexboxLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="125dp"
+                    android:background="@color/white"
+                    app:alignItems="center"
+                    app:flexDirection="column"
+                    app:justifyContent="center">
+
+                    <!-- Product Name -->
+                    <TextView
+                        android:id="@+id/yellow_flower_card_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="@string/product_name_fallback"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <!-- Product Price -->
+                    <TextView
+                        android:id="@+id/yellow_flower_card_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/product_yellow_flower_price_fallback"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+                </com.google.android.flexbox.FlexboxLayout>
+            </com.google.android.flexbox.FlexboxLayout>
+        </androidx.cardview.widget.CardView>
+    </com.google.android.flexbox.FlexboxLayout>
+</RelativeLayout>

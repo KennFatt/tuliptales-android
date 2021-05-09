@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Tuliptales</string>
+
+    <string name="component_price_label">Price: </string>
+    <string name="component_stock_label">Stock: </string>
+    <string name="component_checkout_button">CHECKOUT</string>
+
+    <string name="product_name_fallback">Product Name</string>
+    <string name="product_price_fallback">IDR0</string>
+    <string name="product_stock_fallback">1</string>
+
+    <string name="product_succulent_price_fallback">IDR159000</string>
+    <string name="product_green_leaves_price_fallback">IDR210000</string>
+    <string name="product_bulbous_price_fallback">IDR159000</string>
+    <string name="product_roses_bunch_price_fallback">IDR249000</string>
+    <string name="product_tulip_price_fallback">IDR199000</string>
+    <string name="product_yellow_flower_price_fallback">IDR199000</string>
+    <string name="app_tagline">Local Botanical Store</string>
+
+</resources>
